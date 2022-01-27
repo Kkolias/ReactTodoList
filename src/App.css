@@ -35,3 +35,21 @@
   margin-left: 30px;
   align-self: center;
 }
+.todos-container {
+  width: 70%;
+  height: 400px;
+  border:2px solid red;
+}
+
+
+/*
+AddTask component style
+*/
+input {
+  background: none;
+  height: 40px;
+  border: none;
+  color: black;
+  align-self: center;
+  width: 20rem;
+}

@@ -1,6 +1,8 @@
 import './App.css';
 //import { useState } from 'react';
 import React, { Component } from 'react';
+import Display from './components/Display';
+
 
 export class App extends Component {
   constructor(props){
@@ -46,15 +48,4 @@ export default function App() {
 }
 */
 
-class Display extends Component {
-  
-  render() {
-    return (
-      <div>
-        <h3>class component</h3>
-        <p>count: {this.props.count}</p>
-      </div>
-    );
-  }
-}
 

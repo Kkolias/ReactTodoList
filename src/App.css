@@ -53,3 +53,13 @@ input {
   align-self: center;
   width: 20rem;
 }
+.wrapper {
+  border: 2px solid lightblue;
+  width: 50%;
+  height: 200px;
+  margin: auto;
+  text-align: center;
+}
+.wrapper input {
+  border: 2px solid black;
+}

@@ -1,15 +1,18 @@
 import './App.css';
 //import { useState } from 'react';
 import React, { Component } from 'react';
-import Display from './components/Display';
 
 
 
-const Test = (props) => {
+
+
+
+const TaskList = (props) => {
   return (
-  <div>
-    <h1>{props.nimi}</h1>
-  </div>
+    <div className='task-container'>
+      {props.itemit}
+      
+    </div>
   );
 }
 
@@ -45,18 +48,19 @@ export class App extends Component {
 
   render() {
     const listItems = this.state.items.map((item) =>
-      <li>{item}</li>
+      <div className='task'>{item}</div>
     );
     return (
       <div className='App'>
+        <h2>Task List</h2>
+
         
-        <Test nimi={this.state.nimi}/>
 
         <div class="container">
           <input type="text" placeholder="Lisää tekstiä" onChange={this.handlaaMuutos}></input>
           <button onClick={this.addText}>Lisää</button>
           <div>
-            <ul>{listItems}</ul>
+            <TaskList itemit={listItems}/>
           </div>
         </div>
       </div>

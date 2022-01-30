@@ -28,6 +28,7 @@ export class App extends Component {
     }
     this.handlaaMuutos=this.handlaaMuutos.bind(this);
     this.addText=this.addText.bind(this);
+    this.addTextOnEnter=this.addTextOnEnter.bind(this);
   }
   componentDidMount() {
     this.setState({
@@ -35,21 +36,33 @@ export class App extends Component {
     })
   }
   handlaaMuutos = (e) => {
+    
     this.setState({
       input: e.target.value
     })
   }
   addText = () => {
-    this.setState(previousState => ({
+    if (this.state.input !== "") {
+      this.setState(previousState => ({
       items: [...previousState.items, this.state.input]
     }));
-   
+    this.setState({input: ""})
+    }
+    
   }
-
+  addTextOnEnter = (e) => {
+    console.log("asd")
+    if (e.keyCode === 13) {
+      this.addText()
+    }
+  }
+  
   render() {
-    const listItems = this.state.items.map((item) =>
+    const listItems = this.state.items.map((item) => 
       <div className='task'>{item}</div>
     );
+    
+    
     return (
       <div className='App'>
         <h2>Task List</h2>
@@ -57,7 +70,7 @@ export class App extends Component {
         
 
         <div class="container">
-          <input type="text" placeholder="Lisää tekstiä" onChange={this.handlaaMuutos}></input>
+          <input value={this.state.input} type="text" placeholder="Lisää tekstiä" onKeyDown={this.addTextOnEnter} onChange={this.handlaaMuutos}></input>
           <button onClick={this.addText}>Lisää</button>
           <div>
             <TaskList itemit={listItems}/>

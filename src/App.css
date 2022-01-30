@@ -3,63 +3,35 @@
   background-color: rgb(166, 176, 189);
   width: 100%;
   height: 100vh;
+  padding-top: 50px;
 }
 .container {
-  width: 80%;
+  width: 60%;
+  min-height: 200px;
   height: auto;
   border: 2px solid rgb(87, 68, 255);
   margin: auto;
-}
-.add-task-container {
-  margin: auto;
-  margin-top: 50px;
-  background-color: #00CCFF;
-  border: 3px solid #0099FF;
-  width: 500px;
-  height: 50px;
   border-radius: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
-.add-task-container button {
-  border-radius: 20px;
-  background-color: #0099FF;
-  border: 2px solid black;
-  width: 40px;
-  height: 40px;
-  align-self: center;
-  margin-right: 20px;
-}
-.add-task {
-  margin-left: 30px;
-  align-self: center;
-}
-.todos-container {
-  width: 70%;
-  height: 400px;
-  border:2px solid red;
-}
+
 
 
 /*
 AddTask component style
 */
 input {
+  margin-top: 10px;
   background: none;
   height: 40px;
-  border: none;
+  border: 2px solid rgb(87, 68, 255);
   color: black;
   align-self: center;
   width: 20rem;
+  border-radius: 20px 0px 0px 20px;
 }
-.wrapper {
-  border: 2px solid lightblue;
-  width: 50%;
-  height: 200px;
-  margin: auto;
-  text-align: center;
-}
-.wrapper input {
-  border: 2px solid black;
+.container button {
+  border: 2px solid rgb(87, 68, 255);
+  background-color: rgb(134, 121, 250);
+  height: 46px;
+  border-radius: 0px 20px 20px 0px;
 }

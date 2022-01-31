@@ -59,7 +59,9 @@ export class App extends Component {
   
   render() {
     const listItems = this.state.items.map((item) => 
-      <div className='task'>{item}</div>
+      <div className='task'>
+        <div className='task-text'>{item}</div> 
+      </div>
     );
     
     
@@ -70,8 +72,8 @@ export class App extends Component {
         
 
         <div class="container">
-          <input value={this.state.input} type="text" placeholder="Lisää tekstiä" onKeyDown={this.addTextOnEnter} onChange={this.handlaaMuutos}></input>
-          <button onClick={this.addText}>Lisää</button>
+          <input autoFocus value={this.state.input} type="text" placeholder="Lisää tekstiä" onKeyDown={this.addTextOnEnter} onChange={this.handlaaMuutos}></input>
+          <button onClick={this.addText}>+</button>
           <div>
             <TaskList itemit={listItems}/>
           </div>

@@ -29,6 +29,7 @@ export class App extends Component {
     this.handlaaMuutos=this.handlaaMuutos.bind(this);
     this.addText=this.addText.bind(this);
     this.addTextOnEnter=this.addTextOnEnter.bind(this);
+    this.removeTask=this.removeTask.bind(this);
   }
   componentDidMount() {
     this.setState({
@@ -56,12 +57,16 @@ export class App extends Component {
       this.addText()
     }
   }
-  
+
+  removeTask = (e) => {
+    console.log(this.state.items)
+  }
+  /*Tarvittee keyn jolla voi poistaa komponentin?? */
   render() {
     const listItems = this.state.items.map((item) => 
       <div className='task'>
         <div className='task-text'>{item}</div>
-        <div className='remove-task'>✕</div> 
+        <div className='remove-task' onClick={this.removeTask}>✕</div> 
       </div>
     );
     

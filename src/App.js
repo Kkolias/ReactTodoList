@@ -1,8 +1,8 @@
 import './App.css';
 //import { useState } from 'react';
 import React, { Component } from 'react';
-
-
+import SetTheme from './components/SetTheme';
+//import Display from './components/Display';
 
 
 
@@ -60,20 +60,24 @@ export class App extends Component {
   render() {
     const listItems = this.state.items.map((item) => 
       <div className='task'>
-        <div className='task-text'>{item}</div> 
+        <div className='task-text'>{item}</div>
+        <div className='remove-task'>✕</div> 
       </div>
     );
     
     
     return (
       <div className='App'>
+        
+        
         <h2>Task List</h2>
 
         
 
         <div class="container">
+          <SetTheme />
           <input autoFocus value={this.state.input} type="text" placeholder="Lisää tekstiä" onKeyDown={this.addTextOnEnter} onChange={this.handlaaMuutos}></input>
-          <button onClick={this.addText}>+</button>
+          <button className='element-button' onClick={this.addText}>+</button>
           <div>
             <TaskList itemit={listItems}/>
           </div>

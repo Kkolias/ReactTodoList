@@ -41,7 +41,7 @@
 .dark-theme-enabled::after {
     position:absolute;
     top: 0;
-    left: 0;
+    left: 1px;
     content: '🌑';
     font-size: 30px;
     transform: translateY(-15%) translateX(-15%);

@@ -24,7 +24,8 @@ export class App extends Component {
       count : 0,
       nimi : "",
       input: "",
-      items: []
+      items: [],
+      theme: "light"
     }
     this.handlaaMuutos=this.handlaaMuutos.bind(this);
     this.addText=this.addText.bind(this);
@@ -52,22 +53,26 @@ export class App extends Component {
     
   }
   addTextOnEnter = (e) => {
-    console.log("asd")
     if (e.keyCode === 13) {
       this.addText()
     }
   }
-
-  removeTask = (e) => {
-    console.log(this.state.items)
+  
+  removeTask = (index) => {
+    
+    this.state.items.splice(index, 1)
+    this.setState({items: this.state.items})
+    
   }
-  /*Tarvittee keyn jolla voi poistaa komponentin?? */
+ 
   render() {
-    const listItems = this.state.items.map((item) => 
-      <div className='task'>
+    
+    const listItems = this.state.items.map((item, index) => 
+      <div key={index} className='task' >
         <div className='task-text'>{item}</div>
-        <div className='remove-task' onClick={this.removeTask}>✕</div> 
+        <div className='remove-task' onClick={()=>this.removeTask(index)}>✕</div> 
       </div>
+
     );
     
     
@@ -80,7 +85,7 @@ export class App extends Component {
         
 
         <div class="container">
-          <SetTheme />
+          <SetTheme theme={this.state.theme}/>
           <input autoFocus value={this.state.input} type="text" placeholder="Lisää tekstiä" onKeyDown={this.addTextOnEnter} onChange={this.handlaaMuutos}></input>
           <button className='element-button' onClick={this.addText}>+</button>
           <div>

@@ -7,7 +7,8 @@
   font-family: sans-serif;
 }
 .container {
-  width: 60%;
+  width: 50%;
+  max-width: 1000px;
   min-height: 200px;
   height: auto;
   
@@ -90,6 +91,12 @@ overflow: hidden;
   position: absolute;
   transform: translateY(25%) translateX(-150%);
   font-size: 25px;
+  font-weight: 600;
+}
+.remove-task:hover  {
+  font-size: 30px;
+  transform: translateY(10%) translateX(-130%);
+  cursor: pointer;
 }
 /*
 dark theme color #bb86fc

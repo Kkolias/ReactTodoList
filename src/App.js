@@ -3,7 +3,7 @@ import './App.css';
 import React, { Component } from 'react';
 import SetTheme from './components/SetTheme';
 //import Display from './components/Display';
-
+import './components/SetTheme.css';
 
 
 
@@ -31,7 +31,15 @@ export class App extends Component {
     this.addText=this.addText.bind(this);
     this.addTextOnEnter=this.addTextOnEnter.bind(this);
     this.removeTask=this.removeTask.bind(this);
+    this.changeTheme=this.changeTheme.bind(this);
   }
+  changeTheme = () => {
+    document.querySelector('.slider').classList.toggle("dark-theme-enabled");
+    (this.state.theme === "light" ? this.setState({theme: "dark"}) : this.setState({theme: "light"}))
+    
+    
+  }
+
   componentDidMount() {
     this.setState({
       nimi: "Add Task v1"
@@ -68,7 +76,7 @@ export class App extends Component {
   render() {
     
     const listItems = this.state.items.map((item, index) => 
-      <div key={index} className='task' >
+      <div key={index} className={this.state.theme+'-task'} >
         <div className='task-text'>{item}</div>
         <div className='remove-task' onClick={()=>this.removeTask(index)}>✕</div> 
       </div>
@@ -78,20 +86,22 @@ export class App extends Component {
     
     return (
       <div className='App'>
+        <div className={this.state.theme+'-background'} >
         
-        
-        <h2>Task List</h2>
+          <h2>Task List</h2>
 
-        
+          
 
-        <div class="container">
-          <SetTheme theme={this.state.theme}/>
-          <input autoFocus value={this.state.input} type="text" placeholder="Lisää tekstiä" onKeyDown={this.addTextOnEnter} onChange={this.handlaaMuutos}></input>
-          <button className='element-button' onClick={this.addText}>+</button>
-          <div>
-            <TaskList itemit={listItems}/>
+          <div class="container">
+            <SetTheme theme={this.state.theme} changeTheme={this.changeTheme}/>
+            <input autoFocus value={this.state.input} type="text" placeholder="Lisää tekstiä" onKeyDown={this.addTextOnEnter} onChange={this.handlaaMuutos}></input>
+            <button className='element-button' onClick={this.addText}>+</button>
+            <div>
+              <TaskList itemit={listItems}/>
+            </div>
+            <div id='napula' className={this.state.theme+'-nappula'}></div>
           </div>
-        </div>
+          </div> 
       </div>
     );
   }

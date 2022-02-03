@@ -88,14 +88,14 @@ export class App extends Component {
       <div className='App'>
         <div className={this.state.theme+'-background'} >
         
-          <h2>Task List</h2>
+          <h2>Todo List</h2>
 
           
 
           <div class="container">
             <SetTheme theme={this.state.theme} changeTheme={this.changeTheme}/>
-            <input autoFocus value={this.state.input} type="text" placeholder="Lisää tekstiä" onKeyDown={this.addTextOnEnter} onChange={this.handlaaMuutos}></input>
-            <button className='element-button' onClick={this.addText}>+</button>
+            <input autoFocus value={this.state.input} type="text" placeholder="Add task" onKeyDown={this.addTextOnEnter} onChange={this.handlaaMuutos}></input>
+            <button className={this.state.theme+'-element-button'} onClick={this.addText}>+</button>
             <div>
               <TaskList itemit={listItems}/>
             </div>

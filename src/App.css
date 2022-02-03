@@ -28,7 +28,7 @@
   max-width: 1000px;
   min-height: 200px;
   height: auto;
-  
+  min-width: 500px;
   margin: auto;
   border-radius: 20px;
 }
@@ -57,7 +57,7 @@ input:focus {
   background: none;
   height: 50px;
 }
-.element-button {
+.dark-element-button {
   border: none;
   background-color: #6200ee;
   height: 50px;
@@ -71,7 +71,20 @@ input:focus {
   -webkit-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
   -moz-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
 }
-
+.light-element-button {
+  border: none;
+  background: linear-gradient(#1635e6,#314eee);
+  height: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 50px;
+  border-radius: 55px;
+  color: white;
+  font-size: 20px;
+  box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
+  -webkit-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
+  -moz-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
+}
 
 
 .task-container {
@@ -90,28 +103,31 @@ input:focus {
   background:#6200ee;
   border-radius: 20px;
   box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
--webkit-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
--moz-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
-display: table;
-overflow: hidden; 
+  -webkit-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
+  -moz-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
+  display: table;
+  overflow: hidden; 
 }
 .light-task {
   margin-top: 30px;
   width: 500px;
   min-height: 50px;
-  background:#a287c9;
+  background: linear-gradient(#1635e6,#314eee);
   border-radius: 20px;
   box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
--webkit-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
--moz-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
-display: table;
-overflow: hidden;
+  -webkit-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
+  -moz-box-shadow: 1px 4px 10px 0px rgba(0,0,0,0.59);
+  display: table;
+  overflow: hidden;
 }
 .task-text {
   color: White;
+  
   font-size: 20px;
   font-weight: 600;
   display: table-cell;
+  
+  
   vertical-align: middle;
   transform: translateX(-30%);
 }
@@ -123,7 +139,7 @@ overflow: hidden;
 }
 .remove-task:hover  {
   font-size: 30px;
-  transform: translateY(10%) translateX(-130%);
+  transform: translateY(15%) translateX(-130%);
   cursor: pointer;
 }
 /*
